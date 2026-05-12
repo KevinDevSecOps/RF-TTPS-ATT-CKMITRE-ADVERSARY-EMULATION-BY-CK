@@ -1,0 +1,28 @@
+{
+  "name": "IoT & RF Custom ATT&CK Mapping",
+  "version": "1.0-alpha",
+  "author": "KevinDevSecOps (CK)",
+  "description": "Mapeo táctico personalizado de operaciones de Red Team en espectro electromagnético e IoT hacia MITRE ATT&CK.",
+  "matrix": [
+    {
+      "ck_technique_id": "CK-RF-001",
+      "name": "Sub-GHz Signal Capture & Replay",
+      "tactic": "collection",
+      "mitre_technique_id": "T1119",
+      "mitre_technique_name": "Automated Collection",
+      "tools": ["HackRF One", "PortaPack H2+"],
+      "target_devices": ["Alarm Systems", "Garage Doors", "Remote Controls"],
+      "playbook": "playbooks/rf_collection/subghz_signal_replay.md"
+    },
+    {
+      "ck_technique_id": "CK-RF-002",
+      "name": "BLE Long Range Sniffing",
+      "tactic": "credential-access",
+      "mitre_technique_id": "T1040",
+      "mitre_technique_name": "Network Sniffing",
+      "tools": ["Flipper Zero", "ESP32"],
+      "target_devices": ["BLE Locks", "Medical Devices"],
+      "playbook": "playbooks/iot_credential_access/ble_sniffing.md"
+    }
+  ]
+}
